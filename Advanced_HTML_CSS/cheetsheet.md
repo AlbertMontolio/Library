@@ -1,25 +1,22 @@
-
 Create two files:
 
 - index.html
 - style.css
 
-In index.html we will create the structure of the web page, the skeleton.
+In `index.html` we will create the structure of the web page, the skeleton.
 
-the naming is important. When we put our webpage on the internet, we will use some hosting services. This hosting services will look for the file index.html. If you don't name the html file index.html, the hosting service may not find your html file.
-
-In style.css we will put the style.
+In `style.css` we will put the style.
 
 In your index.html, if you write the word "doc" and press tab, you will get the common structure of an html file:
 
 ```html
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <title>Document</title>
 </head>
 <body>
-	
+  
 </body>
 </html>
 ```
@@ -31,10 +28,10 @@ In the body what we want to show.
 ```html
 <html>
 <head>
-	<!-- intelligence (metada-data) -->
+  <!-- intelligence (metada-data) -->
 </head>
 <body>
-	<!-- Stuff to display -->
+  <!-- Stuff to display -->
 </body>
 </html>
 ```
@@ -62,10 +59,10 @@ Two clicks: open in browser
 
 ```html
 <body>
-	<h1>Web Developers & Tech- Teachers</h1>
-	<h3>We create Web Applications.<br>We bring technology to passionate people.</h3>
-	<h1>Projects</h1>
-	<h1>Gallery</h1>
+  <h1>Web Developers & Tech- Teachers</h1>
+  <h3>We create Web Applications.<br>We bring technology to passionate people.</h3>
+  <h1>Projects</h1>
+  <h1>Gallery</h1>
 </body>
 ```
 
@@ -82,7 +79,7 @@ let's do some css
 ```
 /* style.css */
 h1 {
-	color: red;
+  color: red;
 }
 ```
 
@@ -98,9 +95,9 @@ We are defining the style in the style.css. The structure of the page is in the 
 
 ```html
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 ```
 
@@ -111,10 +108,10 @@ we can play with more CSS
 
 ```css
 h1 {
-	color: red;
-	font-size: 60px;
-	font-family: arial;
-	background-color: pink;
+  color: red;
+  font-size: 60px;
+  font-family: arial;
+  background-color: pink;
 }
 ```
 
@@ -138,7 +135,7 @@ in css, now we can point to this element. we can select this element
 
 ```css
 #title-banner {
-	color: orange;
+  color: orange;
 }
 ```
 
@@ -159,7 +156,7 @@ now, the CSS style that we apply to this class, will be applied to these two tag
 
 ```css
 .secondary-headers {
-	color: blue;
+  color: blue;
 }
 ```
 
@@ -183,11 +180,11 @@ Let's create the structure of this first part of the web page, the banner!
 ```html
 <body>
 
-	<div class="title-wrapper">
-		<h1 id="title-banner">Web Developers & Tech- Teachers</h1>
-		<h3>We create Web Applications</h3>
-		<h3>We bring technology to passionate people.</h3>
-	</div>
+  <div class="title-wrapper">
+    <h1 id="title-banner">Web Developers & Tech- Teachers</h1>
+    <h3>We create Web Applications</h3>
+    <h3>We bring technology to passionate people.</h3>
+  </div>
 
 </body>
 ```
@@ -197,33 +194,33 @@ in the browser nothing changed, but if we see the structure of our page, in the 
 Let's do the same for the top-navbar
 
 ```html
-	<div class="top-navbar">
-		<div class="company-name">
-			DIGITAL TWINS
-		</div>
-		<ul>
-			<li>COURSES</li>
-			<li>ABOUT US</li>
-			<li>CONTACT</li>
-		</ul>
-	</div>
+  <div class="top-navbar">
+    <div class="company-name">
+      DIGITAL TWINS
+    </div>
+    <ul>
+      <li>COURSES</li>
+      <li>ABOUT US</li>
+      <li>CONTACT</li>
+    </ul>
+  </div>
 ```
 
 we are done with the banner! almost! the banner is the big div! everything is inside
 
 ```html
 
-	<div class="top-navbar">
-		<!- [... insert top-navbar code ...] -->
-	</div>
+  <div class="top-navbar">
+    <!- [... insert top-navbar code ...] -->
+  </div>
 
-	<div class="banner">
+  <div class="banner">
 
-		<div class="title-wrapper">
-			<!- [... insert title-wrapper code ...] -->
-		</div>
+    <div class="title-wrapper">
+      <!- [... insert title-wrapper code ...] -->
+    </div>
 
-	</div>
+  </div>
 ```
 
 we want to put some style. now we have everything structured, inside divs. but, we would like to put it in the right place right?
@@ -248,7 +245,7 @@ Before that, let's see our banner. let's put some background-color
 
 ```css
 .banner {
-	background-color: pink;
+  background-color: pink;
 }
 ```
 
@@ -256,7 +253,7 @@ and now let's paint our title-wrapper
 
 ```css
 .title-wrapper {
-	background-color: green;
+  background-color: green;
 }
 ```
 
@@ -266,11 +263,11 @@ css code!
 
 ```css
 .banner {
-	background-color: pink;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
+  background-color: pink;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 ```
 
@@ -281,8 +278,8 @@ vertically?
 
 ```css
 .banner {
-	/* [...] */
-	align-items: center;
+  /* [...] */
+  align-items: center;
 }
 ```
 
@@ -296,8 +293,8 @@ This box model, you can put sapce inside the box, or you can move the boxes away
 
 ```css
 .title-wrapper {
-	padding: 20px;
-	background-color: green;
+  padding: 20px;
+  background-color: green;
 }
 ```
 
@@ -311,8 +308,8 @@ first, we select the element, wheather with ids or classes. in this case, it has
 
 ```css
 #title-banner {
-	background-color: yellow;
-	margin-bottom: 50px;
+  background-color: yellow;
+  margin-bottom: 50px;
 }
 ```
 
@@ -330,7 +327,7 @@ so,
 
 ```css
 body {
-	margin: 0px;
+  margin: 0px;
 }
 ```
 
@@ -348,32 +345,32 @@ let's make a quick example
 let's create the test element inside the banner
 
 ```html
-	<div class="banner">
+  <div class="banner">
 
-		<div id="test-positioning">
-			albert
-		</div>
+    <div id="test-positioning">
+      albert
+    </div>
 
-		<!-- [...] -->
-	</div>
+    <!-- [...] -->
+  </div>
 ```
 
 in css
 
 ```css
 .banner {
-	/* [...] */
+  /* [...] */
 
-	position: relative;
+  position: relative;
 }
 ```
 
 
 ```css
 #test-positioning {
-	position: absolute;
-	top: 100px;
-	right: 100px;
+  position: absolute;
+  top: 100px;
+  right: 100px;
 }
 ```
 
@@ -387,13 +384,13 @@ let's do the same with our navbar
 
 ```css
 body {
-	position: relative;
+  position: relative;
 }
 
 .top-navbar {
-	position: absolute;
-	top: 0px;
-	left: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 ```
 
@@ -407,10 +404,10 @@ you order stuff in this axis
 
 ```css
 .top-navbar {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 2;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
 }
 ```
 
@@ -466,17 +463,17 @@ let's put first some colors, to see, and make the topnavbar with 100%.
 
 ```css
 .top-navbar {
-	/* [...] */
-	width: 100%;
-	background-color: yellow;
+  /* [...] */
+  width: 100%;
+  background-color: yellow;
 }
 
 .company-name {
-	background-color: blue;
+  background-color: blue;
 }
 
 #navbar-items {
-	background-color: red
+  background-color: red
 }
 ```
 
@@ -488,9 +485,9 @@ we have:
 
 ```css
 .top-navbar {
-	/* [...] */
-	display: flex;
-	justify-content: space-between;
+  /* [...] */
+  display: flex;
+  justify-content: space-between;
 }
 ```
 
@@ -500,8 +497,8 @@ we have a small issue. bootstrap puts some margin-bottom in the ul, because he w
 
 ```css
 #navbar-items {
-	background-color: red;
-	margin-bottom: 0px;
+  background-color: red;
+  margin-bottom: 0px;
 }
 ```
 
@@ -509,8 +506,8 @@ let's put some spacing inside the topnavbar
 
 ```css
 .top-navbar {
-	/* [...] */
-	padding: 40px 80px;
+  /* [...] */
+  padding: 40px 80px;
 }
 ```
 
@@ -573,8 +570,8 @@ let's give him an id and put some style
 
 ```css
 #bannerVideo {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 ```
@@ -585,11 +582,11 @@ we use... position: absolute!
 
 ```css
 #bannerVideo {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0px;
-	left: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 ```
 
@@ -604,17 +601,17 @@ in the navbar and title with the color: white
 
 ```css
 #title-banner {
-	color: white;
+  color: white;
 }
 
 .secondary-headers {
-	color: white;
+  color: white;
 }
 ```
 
 ```css
 #navbar-items li {
-	color: white;
+  color: white;
 }
 ```
 
@@ -632,19 +629,19 @@ you know how, we create a big div that occupies all the screen, and we put there
 
 
 ```html
-	<div class="video-layer">
-		
-	</div>
+  <div class="video-layer">
+    
+  </div>
 ```
 
 ```css
 .video-layer {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	background-color: orange;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: orange;
 }
 ```
 
@@ -656,15 +653,15 @@ it must be above the video, but below the letters
 
 ```css
 .banner {
-	/* [...] */
-	z-index: 2;
+  /* [...] */
+  z-index: 2;
 }
 ```
 
 ```css
 .top-navbar {
-	/* [...] */
-	z-index: 2;
+  /* [...] */
+  z-index: 2;
 }
 ```
 
@@ -677,13 +674,13 @@ we want it transparent, but with a filter. filters there are a lot, take this on
 
 ```css
 .video-layer {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	background-image: linear-gradient( -225deg, rgba(16, 33, 43, 0.8) 0%, rgba(24, 43, 56, 0.6) 50% );
-	z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( -225deg, rgba(16, 33, 43, 0.8) 0%, rgba(24, 43, 56, 0.6) 50% );
+  z-index: 1;
 }
 ```
 
