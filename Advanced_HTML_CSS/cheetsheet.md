@@ -184,13 +184,11 @@ Right click, inspect, and in the small color square, click and play with the col
 
 Awesome, now we can apply styles to multiple elements and to unique elements.
 
-# Box model. Everything in boxes!
+# The Box Model: Everything inside boxes!
 
-HTML is the structure. Best way to structure something, put every element in containers!
+We know that HTML is the structure. To position elements in the file, to put the required spaces between elements, best way is to inlcude the elements inside boxe or containers, called `div`s. 
 
-These containers are called `div`.
-
-Every container has a name, whether an id-name or a class-name.
+As we have learnt, we can select these containers, whether with an id-name or with a class-name.
 
 Let's create the structure of this first part of the web page, the banner!
 
@@ -206,7 +204,7 @@ Let's create the structure of this first part of the web page, the banner!
 </body>
 ```
 
-In the website nothing changed, but if we inspect our webpage, we see our new brand container!
+In the website nothing changed, but if we inspect our webpage in the browser, we see our new brand container.
 
 Let's do the same for the top-navbar. Let's structure it with `div`s.
 
@@ -223,7 +221,7 @@ Let's do the same for the top-navbar. Let's structure it with `div`s.
   </div>
 ```
 
-We are almost done with the banner. We are missing the big div, that is engloving everything.
+We are almost done with the banner. We are missing though the big `div`, which is including everything.
 
 ```html
   <div class="top-navbar">
@@ -239,29 +237,30 @@ We are almost done with the banner. We are missing the big div, that is englovin
   </div>
 ```
 
-Now we have a nice structure. But things are not in their place. We want to position the elments now
+Now we have a nice structure. But things are not in their place. We want to position the elements in our webpage.
 
 To position the `div`s in our Web Page, we use two technologies:
 
-- flexbox
-- position relative, absolute pattern
+- The Flexbox technology
+- The position relative, absolute pattern
 
-# Flexbox
+# The Flexbox technology
 
-Flexbox is absolutely amazing. It helps us to position elements over our website. There is a lot of documentation. Best documentation is here:
+Flexbox is absolutely amazing. It helps us to position elements in our website. There is a lot of documentation on the internet. The best resource by fare is this one:
 
 ```html
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 ```
 
+Let's speack about the basics of Flexbox. You always have a big container, which includes some elements inside, that we want to position.
 
+In our banner, we want to position the title in the center of the screen. The banner would be the big container, and we will position the title, relative to the container.
 
+When you want to position stuff in your webpage, you can use this trick:
 
-The basics. you have a main div, the container, and you have elements inside that you want to allocate.
+>Put background colors in every element to see them clearly, otherwise they are all white and you don't see their positions.
 
-Let's center the title.
-
-Before that, let's see our banner. let's put some background-color
+Let's paint the background for the `banner`:
 
 ```css
 .banner {
@@ -269,7 +268,7 @@ Before that, let's see our banner. let's put some background-color
 }
 ```
 
-and now let's paint our title-wrapper
+and now let's paint our `title-wrapper`.
 
 ```css
 .title-wrapper {
@@ -277,9 +276,31 @@ and now let's paint our title-wrapper
 }
 ```
 
-Ups, we see that the title-wrapper ocuppies all the banner. We want the banner to occupy all the screen right?
+Thanks to this strategy, we see that the `title-wrapper` ocuppies all the `banner`, that means, that the `banner` is to small. We want the `banner` to occupy all the screen, right?
 
 css code!
+
+```css
+.banner {
+  background-color: pink;
+  height: 100%;
+  width: 100%;
+}
+
+Now our banner occupies all the screen.
+Let's use the technology flex. If we use `display-flex` in the banner, that would act as the big container. All the elements inside will follow the flex box model.
+
+```css
+.banner {
+  [...]
+  display: flex;
+}
+```
+
+Elements are aligned, that's the first property in the flex box model.
+Now we can use the property `justify-content`, to align the items horizontally.
+
+### here
 
 ```css
 .banner {
@@ -708,7 +729,198 @@ we want it transparent, but with a filter. filters there are a lot, take this on
 we are done!!!!!
 
 
+# Bootstrap
 
+Change the path to your images
+
+```html
+<div class="container my-container">
+    <div class="row my-row">
+      <div class="col-xs-12 col-sm-6 col-md-4 item1 item">
+
+        <div class="card">
+          <img class="card-img-top" src="images/bosque.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">HTML & CSS Workshop</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 item2 item">
+
+        <div class="card">
+          <img class="card-img-top" src="images/bosque.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">HTML & CSS Workshop</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 item3 item">
+
+        <div class="card">
+          <img class="card-img-top" src="images/costa.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">HTML & CSS Workshop</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+```
+
+In bootstrap, look for a modal and copy paste it in your code.
+
+don't forget the javascript files.
+
+```html
+<div class="subscribe-wrapper">
+  <button id="subscribe-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+# Fontawesome
+
+find the best icons
+
+https://fontawesome.com/icons?from=io
+
+Get started / copy the CDN-url
+
+use icons!
+
+
+# Media queries
+
+Select a break point in your size, and change the classes!
+
+```css
+@media only screen and (max-width: 450px) {
+  .top-navbar {
+    padding: 40px 15px;
+  }
+  .top-navbar .name { font-size: 14px; }
+  .top-navbar .item { font-size: 14px; }
+
+  .title-wrapper {
+    padding: 10px;
+  }
+
+  .title-wrapper h1 {
+    font-size: 40px;
+    color: white;
+  }
+  .title-wrapper h3 {
+    font-size: 20px;
+    color: white;
+  }
+  .gallery {
+    width: 100%;
+  }
+
+  .subscribe-wrapper {
+    padding: 200px 20px;
+  }
+
+}
+```
+
+
+
+
+
+# Github pages
+
+a free service to host your webpage.
+
+First you need to create a webpage.
+
+If you have a Github account,
+type in your folder:
+
+```
+git init
+ga .
+gc -m "init"
+hub create
+git checkout -b gh-pages
+git push origin gh-pages
+```
+
+
+```
+git init
+```
+
+Initiate your git project
+
+```
+ga .
+```
+
+Track all the files in your project
+
+```
+gc- m "init"
+```
+
+Make a snapshot of the status of your file
+
+```
+hub create
+```
+
+Connect your local repository to your github account
+
+```
+git checkout -b gh-pages
+```
+
+Create a gh-pages branch. It has to be this name. It's the branch, that github uses to host your webpage
+
+```
+git push origin gh-pages
+```
+
+Push your code into this branch.
 
 
 
