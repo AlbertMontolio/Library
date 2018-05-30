@@ -1,4 +1,12 @@
-Create two files:
+We will make following website:
+
+```
+https://albertmontolio.github.io/digital_twins_html
+```
+
+# Introduction to HTML & CSS
+
+Create two files in a folder:
 
 - index.html
 - style.css
@@ -7,7 +15,7 @@ In `index.html` we will create the structure of the web page, the skeleton.
 
 In `style.css` we will put the style.
 
-In your index.html, if you write the word "doc" and press tab, you will get the common structure of an html file:
+In your `index.html`, if you write the word "doc" and press tab, you will get the common structure of an html file (otherwise, copy this):
 
 ```html
 <html>
@@ -21,9 +29,9 @@ In your index.html, if you write the word "doc" and press tab, you will get the 
 </html>
 ```
 
-In the head we put the metadata.
+In the head we put the metadata, information that is not shown, but is needed from our webpage. For example, the information that google displays from our website, links from other libraries that we want to use in our website etc.
 
-In the body what we want to show.
+In the body we put what we want to show in our actual website, what the viewers see.
 
 ```html
 <html>
@@ -36,45 +44,47 @@ In the body what we want to show.
 </html>
 ```
 
-In html you create elements of your page (titles, subtitles, paragrafs, etc) with tags
+In HTML you create elements of your page (titles, subtitles, paragrafs, etc) with tags.
 
-- h1, h2, h3, h4, h5, h6
-- p
-- img
-- a
+There are a lot of tags, you will discover them along the course.
 
-ul: unorder list
-li
+- h1, h2, h3, h4, h5, h6: for headers
+- p: for paragraphs
+- img: for images
+- a: for links
 
-example slide
+There are more complex ones, like `<ul>` which stands for unordered list:
 
-you can add some style to these tags with css
+```html
+<ul>
+  <li> item 1 </li>
+  <li> item 2 </li>
+</ul>
+```
 
+## Live Code
 
-Live Code
+Create h1 and h3 tags in your HTML file.
 
-Create h1 and h3 tags
-
-Two clicks: open in browser
+To open your first webpage in the browser, right click in your sublime file, select open in browser. In MAC you can drag and drop the google chrome icon that you have on top in your Sublime text editor.
 
 ```html
 <body>
   <h1>Web Developers & Tech- Teachers</h1>
-  <h3>We create Web Applications.<br>We bring technology to passionate people.</h3>
+  <h3>We create Web Applications.</h3>
+  <h3>We bring technology to passionate people.</h3>
   <h1>Projects</h1>
   <h1>Gallery</h1>
 </body>
 ```
 
-We have various h1, we have an h3. We see that we have spacing around the elements, and we didn't define it.
+We have various h1, we have an h3. If we look at the browser, we see that we have spacing around the elements, and we didn't define it. This is because some tags have their own default spacing.
 
+# Applying CSS
 
+A page without style is pretty boring. Now we want to custom the style of these headers.
 
-# Apply CSS
-
-we want to custom the style of these headeres
-
-let's do some css
+Let's take the following example to learn how to write CSS.
 
 ```
 /* style.css */
@@ -83,15 +93,17 @@ h1 {
 }
 ```
 
-to write comments we use `/* some comment */`
+To write comments we use `/* some comment */`
 
-To style an HTML element, we use its name and curly braces. Inside, we explain through properties how this element should look like.
+To style an HTML element, we use its name tag to select it. In our case, we are selecting all the h1 of the website.
 
-In our example, we want that the color is red.
+Inside the curly braces, we explain which properties we want to define, and we give a value.
 
-if we go to our web page, nothing happened. The h1 are still black. Why?
+In our example, we want that the color of the numerous h1 is red.
 
-We are defining the style in the style.css. The structure of the page is in the HTML file. There we have the head. The brain of our web. We need to tell the header, where is this css file.
+If we go to our web page, we don't see that our h1 are red. Why?
+
+We are defining the style in the `style.css` file. The structure of the page is in the HTML file though. There we have the head tag. The brain of our web. We need to tell the head, where is this css file, so that our webpage can get this styling that we define.
 
 ```html
 <head>
@@ -101,10 +113,9 @@ We are defining the style in the style.css. The structure of the page is in the 
 </head>
 ```
 
+Now we should how our webpage have some colors
 
-Awesome! it's working
-
-we can play with more CSS
+We can play with more CSS
 
 ```css
 h1 {
@@ -115,23 +126,29 @@ h1 {
 }
 ```
 
-Up to you to discover more.
+You can find in google hundres of properties that you can change in an HTML tag. It's up to you to discover more.
 
-Remember, you define the CSS-property, and you assign a value.
+>Remember, you select the HTML tag, you define the CSS-property and you assign a value.
 
 # Classes and Ids
 
-Everything is great, but we are styling all the h1. What if I just want to style the first one?
+# Select one HTML element with an ID.
 
-I need it to select it somehow. That's why we use Ids. To select an HTML element, and give the style, just to this specific element
+We can now put some colors in the elements of the HTML file, but we are styling all the h1. 
+
+What if I just want to style the first one?
+
+I need to select the first h1 somehow. That's why we use Ids: to select an HTML element. Once selected, we can give the style in the CSS file, just to this specific element.
+
+To label an HTML element with an ID, you should use this syntax:
 
 ```html
 <h1 id="title-banner">Web Developers & Tech- Teachers</h1>
 ```
 
-That's the syntax, the keyword id, and the name that we want to give. the label.
+That's the syntax, the keyword id and the name that you want to give, or the label.
 
-in css, now we can point to this element. we can select this element
+Now in CSS we can point to this element. We can apply style just to this element.
 
 ```css
 #title-banner {
@@ -139,20 +156,22 @@ in css, now we can point to this element. we can select this element
 }
 ```
 
-Awesome. Now we know how to select one element. But what happens, if we have two titles that have the same style? Like Projects and Gallery
+Now we know how to select one element. But what happens, if we have two titles that have the same style? Like Projects and Gallery
 
-We use classes!
+# Select group of elements with same style: classes.
 
-We select the elements that we want to style. Now, they are several
+To apply one style to multiple HTML elements we use classes.
 
-we use for example the class, secondary-headers, and we will apply some css rules in this class.
+First we select the elements that we want to style.
 
 ```html
 <h1 class="secondary-headers">Projects</h1>
 <h1 class="secondary-headers">Gallery</h1>
 ```
 
-now, the CSS style that we apply to this class, will be applied to these two tags.
+Now we want to select two elements, so the two elements will have the same class, "secondary-headers"
+
+Let's apply some styling to this class.
 
 ```css
 .secondary-headers {
@@ -160,20 +179,18 @@ now, the CSS style that we apply to this class, will be applied to these two tag
 }
 ```
 
-you can change the color in the html browser.
-Right click, inspect, and in the color, click and play
-
-
+>You can select other colors in the browser.
+Right click, inspect, and in the small color square, click and play with the colors
 
 Awesome, now we can apply styles to multiple elements and to unique elements.
 
 # Box model. Everything in boxes!
 
-HTML is the structured. Best way to structure something, put every element in containers!
+HTML is the structure. Best way to structure something, put every element in containers!
 
-This containers are called divs.
+These containers are called `div`.
 
-Every container has a name, wheather an id-name or a class-name.
+Every container has a name, whether an id-name or a class-name.
 
 Let's create the structure of this first part of the web page, the banner!
 
@@ -189,9 +206,9 @@ Let's create the structure of this first part of the web page, the banner!
 </body>
 ```
 
-in the browser nothing changed, but if we see the structure of our page, in the browser, we have our container!
+In the website nothing changed, but if we inspect our webpage, we see our new brand container!
 
-Let's do the same for the top-navbar
+Let's do the same for the top-navbar. Let's structure it with `div`s.
 
 ```html
   <div class="top-navbar">
@@ -206,10 +223,9 @@ Let's do the same for the top-navbar
   </div>
 ```
 
-we are done with the banner! almost! the banner is the big div! everything is inside
+We are almost done with the banner. We are missing the big div, that is engloving everything.
 
 ```html
-
   <div class="top-navbar">
     <!- [... insert top-navbar code ...] -->
   </div>
@@ -223,18 +239,22 @@ we are done with the banner! almost! the banner is the big div! everything is in
   </div>
 ```
 
-we want to put some style. now we have everything structured, inside divs. but, we would like to put it in the right place right?
+Now we have a nice structure. But things are not in their place. We want to position the elments now
 
-to posionated divs in our web page, we use two technologies:
+To position the `div`s in our Web Page, we use two technologies:
 
 - flexbox
-- position relative, absolute
+- position relative, absolute pattern
 
 # Flexbox
 
-flexbox is absolutely amazing. there is a lot of documentation. 
+Flexbox is absolutely amazing. It helps us to position elements over our website. There is a lot of documentation. Best documentation is here:
 
+```html
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+```
+
+
 
 
 The basics. you have a main div, the container, and you have elements inside that you want to allocate.
